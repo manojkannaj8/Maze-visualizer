@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DFS - Maze Solver</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-effects"></div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">🧭 MazeVisualizer</a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About DFS</a>
+            <a href="index.html#app">How to Use</a>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html#app" class="action-btn secondary">Reset Grid</a>
+            <a href="index.html#app" class="action-btn primary">Solve Maze</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-container">
+            <h1>About Depth-First Search (DFS)</h1>
+            
+            <h2>The "Go Deep" Strategy</h2>
+            <p>
+                Imagine you're in a real maze. At every fork in the road, you decide to **always pick one direction** (like "go right") and keep going. You only turn back (backtrack) when you hit a dead end. 
+            </p>
+            <p>
+                When you backtrack, you go back *only* to the last fork where you had another choice, and then you try that next choice. This "go deep" strategy is the core idea of DFS.
+            </p>
+
+            <h2>The Stack: The Algorithm's Memory</h2>
+            <p>
+                How does DFS "remember" where to backtrack to? It uses a data structure called a **Stack**.
+            </p>
+            <p>
+                Think of a stack of plates: you can only add a new plate to the **top**, and you can only take a plate from the **top**. This is called **LIFO (Last-In, First-Out)**.
+            </p>
+            <ul>
+                <li><strong>PUSH:</strong> When you move to a new, unvisited cell, you **push** its coordinates onto the top of the stack.</li>
+                <li><strong>POP:</strong> When you hit a dead end (no unvisited neighbors), you **pop** the current cell off the stack. The cell *now* at the top is the last place you had a choice.</li>
+            </ul>
+
+            <h2>Live Animation: Stack vs. Maze</h2>
+            <p>
+                Click "Play" to see how the stack (LIFO) and the algorithm's exploration are perfectly synchronized. Watch it hit a dead end, pop from the stack, and backtrack.
+            </p>
+            
+            <div class="animation-container">
+                <div class="anim-side">
+                    <h3>Mini-Maze</h3>
+                    <div id="anim-grid">
+                        <div class="anim-cell start" id="a0">(0,0)</div>
+                        <div class="anim-cell" id="a1">(0,1)</div>
+                        <div class="anim-cell wall" id="a2">Wall</div>
+                        <div class="anim-cell" id="a3">(1,0)</div>
+                        <div class="anim-cell" id="a4">(1,1)</div>
+                        <div class="anim-cell" id="a5">(1,2)</div>
+                        <div class="anim-cell" id="a6">(2,0)</div>
+                        <div class="anim-cell end" id="a7">(2,1)</div>
+                        <div class="anim-cell" id="a8">(2,2)</div>
+                    </div>
+                    <button id="play-anim-btn" class="action-btn primary">Play Animation</button>
+                </div>
+                <div class="anim-side">
+                    <h3>Stack (LIFO)</h3>
+                    <div id="anim-stack">
+                        </div>
+                </div>
+            </div>
+
+            <h2>Why Doesn't It Find the *Shortest* Path?</h2>
+            <p>
+                As you saw on the main page, DFS is **not guaranteed** to find the shortest path. Because it just "goes deep," the first path it stumbles upon might be a very long, winding one. It has no concept of distance.
+            </p>
+            <p>
+                An algorithm called **Breadth-First Search (BFS)** is used for that. BFS explores in "layers" (like ripples in a pond) and is guaranteed to find the shortest path.
+            </p>
+
+        </section>
+    </main>
+
+    <script src="about-animation.js"></script>
+</body>
+</html>

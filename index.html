@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Solver Visualization</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+
+    <div class="background-effects"></div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">🌀 MazeVisualizer</a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About DFS</a>
+            <a href="index.html#app">How to Use</a>
+        </nav>
+        <div class="header-actions">
+            <button id="reset-btn" class="action-btn secondary">Reset Grid</button>
+            <button id="solve-btn" class="action-btn primary">Solve Maze</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Visualized Pathfinding</h1>
+                <h2>Easy Maze Solving</h2>
+                <p class="subtitle">Designed for Visual Learners</p>
+                <p class="description">
+                    See how a stack-based algorithm explores a maze. Our app provides a top-tier,
+                    real-time visualization of DFS backtracking, making complex computer science
+                    simple and accessible for everyone.
+                </p>
+            </div>
+            
+            <div id="three-container"></div>
+
+        </section>
+
+        <section id="app">
+            <div class="controls">
+                <div class="control-group">
+                    <label>Draw Mode:</label>
+                    <button id="set-start-btn" class="mode-btn active">Set Start</button>
+                    <button id="set-end-btn" class="mode-btn">Set End</button>
+                    <button id="set-wall-btn" class="mode-btn">Set Walls</button>
+                </div>
+                
+                <div class="control-group">
+                    <button id="clear-walls-btn" class="action-btn secondary">Clear Walls</button>
+                </div>
+
+                <div class="control-group">
+                    <label for="speed-slider">Speed:</label>
+                    <input type="range" id="speed-slider" min="10" max="200" value="50" step="10">
+                </div>
+            </div>
+
+            <div id="grid-container"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="3d-maze.js"></script>
+
+</body>
+</html>
