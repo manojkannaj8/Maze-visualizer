@@ -1,4 +1,4 @@
-# 🧭 Maze Solver Visualization (Stack-Based DFS)
+# 🧭 Grid Navigator Visualization (Stack-Based DFS)
 
 This is a web-based application that visualizes the **Depth-First Search (DFS)** algorithm in real-time. Users can interactively draw a maze, set start and end points, and watch the stack-based backtracking algorithm find a path.
 
@@ -32,4 +32,5 @@ No complex setup is required! This project runs directly in any modern web brows
     * `style.css`
     * `script.js`
     * `3d-maze.js`
+
 3.  Open the **`index.html`** file in your web browser.
